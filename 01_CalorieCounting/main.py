@@ -1,3 +1,12 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+    Advent of Code Coding Calendar
+    Day 1 - Calorie Counting
+"""
+
+
 def get_calories_per_elve(filename):
     """
     FUNCTION RETURNS LIST OF CALORIES CARRIED BY EACH ELVE
