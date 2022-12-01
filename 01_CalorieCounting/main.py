@@ -9,29 +9,27 @@
 
 def get_calories_per_elve(filename):
     """
-    FUNCTION RETURNS LIST OF CALORIES CARRIED BY EACH ELVE
+    FUNCTION RETURNS LIST OF CALORIES (SUM) CARRIED BY EACH ELVE
     """
+    
     # Read calorie_list file
     with open(filename) as f:
         lines = f.readlines()  
 
-    # Create empty list -> calories_per_elve
+    # Create empty list to assign sum of calories per elve
     calories_per_elve = []
     
     # Init current_calories (to sum up calories per elve)
     current_calories_sum = 0
     
-    # Iterate over over calorie_list -> iLine
+    # Iterate over over calorie_list
     for line in lines:
         
-        # Get current line and save as calories
-        current_calories = line 
-        
         # Current line is not empty (add to current_calories_sum)
-        if current_calories != "\n" :
-            current_calories_sum += int(current_calories)
+        if line != "\n" :
+            current_calories_sum += int(line)
         
-        # Current line is not empty (add to current_calories_sum)
+        # Current line is empty (append sum of calories to current elve and reset current_calories_sum)
         else:
             # Add calories to each elve
             calories_per_elve.append(current_calories_sum)
@@ -63,17 +61,16 @@ def get_top_three_calories(calories_per_elve):
     # Init current maximum 
     current_maximum = 0
 
+    # Do as long as top three has not three elements
     while len(top_three_calories_total_list) <3:
         
         # Get current maximum in list
         current_maximum = max(temp_list_calories)
         
-        top_three_calories_total_list.append(current_maximum)
-        
         # Get number of occurrences of maximum in list (in case there are more than one)
         n_occurrences = temp_list_calories.count(current_maximum)
         
-        for iOccurrences in range(0,n_occurrences-1):
+        for iOccurrences in range(0,n_occurrences):
             # Append maximum for number of occurrences
             top_three_calories_total_list.append(current_maximum)               
         
@@ -84,6 +81,7 @@ def get_top_three_calories(calories_per_elve):
         if len(top_three_calories_total_list) >= 3:
             top_three_calories_total_list = top_three_calories_total_list[0:3]
 
+    # Return sum of top three
     return sum(top_three_calories_total_list)
     
 if __name__ == "__main__":
@@ -95,7 +93,7 @@ if __name__ == "__main__":
     
     # Get elve who carries most calories and how many calories 
     max_calories, elve_with_max_calories = get_max_calories_and_elve(calories_per_elve)
-
+    
     # Output elve who carries most calories and how many he/she carries
     print('Elve ' + str(elve_with_max_calories) + ' carries ' + str(max_calories) + ' calories!')
     
