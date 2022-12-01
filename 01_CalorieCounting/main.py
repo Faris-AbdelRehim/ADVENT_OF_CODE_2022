@@ -51,6 +51,7 @@ def get_top_three_calories(calories_per_elve):
     """
     FUNCTION RETURNS THE SUM OF THE TOP THREE CALORIES 
     """    
+    
     return sum(sorted(calories_per_elve)[-3:])
     
 if __name__ == "__main__":
