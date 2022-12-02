@@ -9,7 +9,7 @@
 
 def get_calories_per_elve(filename):
     """
-    FUNCTION RETURNS LIST OF CALORIES (SUM) CARRIED BY EACH ELVE
+    FUNCTION RETURNS LIST OF CALORIES CARRIED SUM BY EACH ELVE 
     """
     
     # Read calorie_list file
