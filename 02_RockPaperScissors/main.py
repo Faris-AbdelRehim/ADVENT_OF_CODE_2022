@@ -20,14 +20,17 @@ def read_file(filename):
 
 def calc_part_1(file):
     """
-    A,X - ROCK
-    B,Y - PAPER
-    C,Z - SCISSORS        
+    FUNCTION RETURNS THE SCORE OF PART 1
     
-    A > Z (Rock defeats Scissors)
-    C > Y (Scissors defeats Paper)
-    B > X (Paper defeats Rock)    
-    
+    A,Z - Lose against ROCK -> SCISSORS
+    B,X - Lose against PAPER -> ROCK
+    C,Y - Lose against SCISSORS -> PAPER 
+    C,X - Win against SCISSORS -> ROCK
+    B,Z - Win against PAPER -> SCISSORS
+    A,Y - Win against ROCK -> PAPER
+    A,X - Draw against ROCK -> ROCK
+    B,Y - Draw against PAPER -> PAPER
+    C,Z - Draw against SCISSORS -> SCISSORS 
     """
     
     # Init point sum
@@ -41,23 +44,23 @@ def calc_part_1(file):
             and line[2] == 'X' or line[2] == 'Y' or line[2] == 'Z' :   
             # Valid round
             points_sum += {
-                # Lose # Choose SCISSORS
+                # Lose # SCISSORS
                 ('A','Z'):0+3,
-                # Lose # Choose PAPER                
+                # Lose # PAPER                
                 ('C','Y'):0+2,
-                # Lose # Choose ROCK                
+                # Lose # ROCK                
                 ('B','X'):0+1,
-                # Win # Choose ROCK
+                # Win # ROCK
                 ('C','X'):6+1,
-                # Win # Choose SCISSORS                
+                # Win # SCISSORS                
                 ('B','Z'):6+3,
-                # Win # Choose PAPER                
+                # Win # PAPER                
                 ('A','Y'):6+2,  
-                # Draw # Choose ROCK
+                # Draw # ROCK
                 ('A','X'):3+1,
-                # Draw # Choose PAPER                
+                # Draw # PAPER                
                 ('B','Y'):3+2,
-                # Draw # Choose SCISSORS                
+                # Draw # SCISSORS                
                 ('C','Z'):3+3,                                                
                 }[line[0],line[2]]
         else:
@@ -69,15 +72,17 @@ def calc_part_1(file):
 
 def calc_part_2(file):
     """
+    FUNCTION RETURNS THE SCORE OF PART 1    
+    
     A,X - Lose against ROCK -> Choose SCISSORS
     B,X - Lose against PAPER -> Choose ROCK
     C,X - Lose against SCISSORS -> Choose PAPER 
     A,Z - Win against ROCK -> Choose PAPER
     B,Z - Win against PAPER -> Choose SCISSORS
     C,Z - Win against SCISSORS -> Choose ROCK
-    A,Y - Draw against ROCK -> Choose ROCK
+    A,X - Draw against ROCK -> Choose ROCK
     B,Y - Draw against PAPER -> Choose PAPER
-    C,Y - Draw against SCISSORS -> Choose SCISSORS          
+    C,Z - Draw against SCISSORS -> Choose SCISSORS          
     """
     
     # Init point sum    
