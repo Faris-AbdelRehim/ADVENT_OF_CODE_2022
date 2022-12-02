@@ -3,7 +3,7 @@
 
 """
     Advent of Code Coding Calendar
-    Day 2 - <topic>
+    Day <day> - <topic>
 """
 
 
@@ -23,7 +23,7 @@ if __name__ == "__main__":
     # Specify input filename
     filename = '<filename>.txt'
     
-    # Func
+    # Read File
     file = read_file(filename)
     
     # Output Solution
