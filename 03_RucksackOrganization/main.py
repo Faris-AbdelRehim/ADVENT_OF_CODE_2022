@@ -140,13 +140,13 @@ if __name__ == "__main__":
     # Find same characters in compartments
     rucksack_item_priorities_sum = calc_part_1(file)
     
-    # Output Solution   
+    # Output Solution of part one 
     print(rucksack_item_priorities_sum)  
     
-
     ## Part two
     print('--- PART TWO ---')       
     # Find same characters in compartments
     priorities_sum = calc_part_2(file)
 
+    # Output Solution of part two
     print(priorities_sum)  
