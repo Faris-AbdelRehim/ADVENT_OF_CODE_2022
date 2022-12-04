@@ -21,10 +21,20 @@ def read_file(filename):
 
 if __name__ == "__main__":
     # Specify input filename
-    filename = '<filename>.txt'
+    filename = 'input_example.txt'
+    # filename = 'input_example.txt'  
     
     # Read File
     file = read_file(filename)
     
-    # Output Solution
+    ## Part one
+    print('--- PART ONE ---')     
+    
+    # Output Solution of part one
     print('...')    
+    
+    ## Part two
+    print('--- PART TWO ---')       
+    
+    # Output Solution of part two
+    print('...')     

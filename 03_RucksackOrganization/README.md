@@ -1,23 +1,3 @@
-# Day 2: 
-
-<Infotext>
-
-## --- Part One ---
-
-<Question 1>
-
-### Your puzzle answer was 67027.
-
-## --- Part Two ---
-
-<Question 2>
-
-### Your puzzle answer was 197291.
-
-Both parts of this puzzle are complete! They provide two gold stars: **
-
-
-
 # --- Day 3: Rucksack Reorganization ---
 
 One Elf has the important job of loading all of the rucksacks with supplies for the jungle journey. Unfortunately, that Elf didn't quite follow the packing instructions, and so a few items now need to be rearranged.
