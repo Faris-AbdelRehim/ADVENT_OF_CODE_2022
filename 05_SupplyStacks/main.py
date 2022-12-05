@@ -91,22 +91,17 @@ def move_create(source, destination, stacks):
 
 def perform_arrangements_single(stacks_init, rearrangements):
     stacks = stacks_init
-    print(stacks)
     for rearrangement in rearrangements:
-        print(rearrangement)
         # Parse rearrangement line
         number_of_crates_to_move = [int(s) for s in rearrangement.split() if s.isdigit()][0]
         source = [int(s) for s in rearrangement.split() if s.isdigit()][1]
         destination = [int(s) for s in rearrangement.split() if s.isdigit()][2]
         
         for i in range(0,number_of_crates_to_move):
-            stacks = move_create(source, destination, stacks)
-        print(stacks)     
+            stacks = move_create(source, destination, stacks) 
     return stacks
 
 def move_crates(source, destination, number_of_crates_to_move, stacks):
-    if number_of_crates_to_move == 4 and source == 2 and destination == 9: 
-        print("HI")    
     crates_to_move = []
     
     crate_counter = 0
@@ -147,8 +142,7 @@ def move_crates(source, destination, number_of_crates_to_move, stacks):
 
 def perform_arrangements_multiple(stacks_init, rearrangements):
     stacks = stacks_init
-    for stack in stacks:
-        print(stack)
+    
     for rearrangement in rearrangements:
         # Count stack vals
         sum = 0
@@ -157,18 +151,12 @@ def perform_arrangements_multiple(stacks_init, rearrangements):
                 if crate != ' ':
                     sum += 1
         
-        # if sum < 56:
-        print(sum)
-        
-        print(rearrangement)
         # Parse rearrangement line
         number_of_crates_to_move = [int(s) for s in rearrangement.split() if s.isdigit()][0]
         source = [int(s) for s in rearrangement.split() if s.isdigit()][1]
         destination = [int(s) for s in rearrangement.split() if s.isdigit()][2]
         
         stacks = move_crates(source, destination, number_of_crates_to_move, stacks)
-        for stack in stacks:
-            print(stack)
     return stacks
 
 def get_top_creates(stacks):
@@ -188,7 +176,7 @@ def get_top_creates(stacks):
 if __name__ == "__main__":
     # Specify input filename
     # filename = 'input_example.txt'
-    filename = '/Users/farisabdelrehim/000_ARBEIT/000_SOFTWAREENTWICKLUNG/002_PROJEKTE/000_EIGENE_PROJEKTE/001_ADVENT_OF_CODE/05_SupplyStacks/input_task.txt'  
+    filename = 'input_task.txt'
     
     # Read File
     file = read_file(filename)
