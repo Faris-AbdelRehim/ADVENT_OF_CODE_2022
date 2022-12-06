@@ -230,7 +230,7 @@ if __name__ == "__main__":
     stacks_final = perform_arrangements_multiple(stacks_init, rearrangements)
     
     # Get each top crate
-    top_crates = get_top_creates(stacks_final)    
+    top_crates = get_top_crates(stacks_final)    
     
     # Output Solution of part two
     print(top_crates)     
