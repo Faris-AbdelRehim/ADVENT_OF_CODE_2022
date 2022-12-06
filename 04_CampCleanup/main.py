@@ -46,7 +46,7 @@ def get_fully_overlapping_assignments(file):
 
 def get_overlapping_assignments(file):
     """
-    FUNCTIONS RETURNS NUMBER OF FULLY OVERLAPPING ASSIGNMENTS
+    FUNCTIONS RETURNS THE NUMBER OF FULLY OVERLAPPING ASSIGNMENTS
     """
     
     # Init pair counter
