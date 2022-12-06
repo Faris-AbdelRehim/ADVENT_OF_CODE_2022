@@ -22,7 +22,7 @@ def read_file(filename):
 if __name__ == "__main__":
     # Specify input filename
     filename = 'input_example.txt'
-    # filename = 'input_example.txt'  
+    # filename = 'input_task.txt'  
     
     # Read File
     file = read_file(filename)

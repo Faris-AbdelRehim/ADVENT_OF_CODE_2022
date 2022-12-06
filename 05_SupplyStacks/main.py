@@ -21,6 +21,9 @@ def read_file(filename):
     return lines
 
 def get_init_status(file):
+    """
+    FUNCTION RETURNS INITIAL STACK
+    """
     
     ## Get number of stacks
     stack_ids = 0
@@ -59,7 +62,11 @@ def get_init_status(file):
     return stacks, stack_ids, rearrangements
 
 
-def move_create(source, destination, stacks):
+def move_crate(source, destination, stacks):
+    """
+    FUNCTION RETURNS STACK WITH MOVED CRATE FROM source TO destination
+    """    
+    
     crate_to_move = ' '
     
     try:
@@ -90,6 +97,10 @@ def move_create(source, destination, stacks):
     return stacks
 
 def perform_arrangements_single(stacks_init, rearrangements):
+    """
+    FUNCTION RETURNS STACK WITH MOVED CRATE ACCORDING TO rearrangements
+    """    
+        
     stacks = stacks_init
     for rearrangement in rearrangements:
         # Parse rearrangement line
@@ -98,10 +109,14 @@ def perform_arrangements_single(stacks_init, rearrangements):
         destination = [int(s) for s in rearrangement.split() if s.isdigit()][2]
         
         for i in range(0,number_of_crates_to_move):
-            stacks = move_create(source, destination, stacks) 
+            stacks = move_crate(source, destination, stacks) 
     return stacks
 
 def move_crates(source, destination, number_of_crates_to_move, stacks):
+    """
+    FUNCTION RETURNS STACK WITH MOVED number_of_crates_to_move CRATES FROM source TO destination
+    """    
+        
     crates_to_move = []
     
     crate_counter = 0
@@ -141,6 +156,10 @@ def move_crates(source, destination, number_of_crates_to_move, stacks):
     return stacks
 
 def perform_arrangements_multiple(stacks_init, rearrangements):
+    """
+    FUNCTION RETURNS STACK WITH MOVED CRATE ACCORDING TO rearrangements (part 2)
+    """    
+            
     stacks = stacks_init
     
     for rearrangement in rearrangements:
@@ -159,7 +178,11 @@ def perform_arrangements_multiple(stacks_init, rearrangements):
         stacks = move_crates(source, destination, number_of_crates_to_move, stacks)
     return stacks
 
-def get_top_creates(stacks):
+def get_top_crates(stacks):
+    """
+    FUNCTION RETURNS THE TOP CRATES ON THE STACKS
+    """    
+            
     top_crates = []
     for stack in stacks:
         try:
@@ -191,7 +214,7 @@ if __name__ == "__main__":
     stacks_final = perform_arrangements_single(stacks_init, rearrangements)
     
     # Get each top crate
-    top_crates = get_top_creates(stacks_final)
+    top_crates = get_top_crates(stacks_final)
     
     
     # Output Solution of part one
